@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú despegable</title>
+    <link rel="stylesheet" href="styles\styles.css">
+</head>
+
+<body>
+    <img src="imagenes\bannerok.png"
+        style="float:right; width: 35%; height:auto; padding-top: 0px; padding-bottom: 30px;">
+
+    <nav class="nav">
+        <ul class="list">
+
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="imagenes\assets\home.svg" class="list__img">
+                    <th><a href="index.html" class="nav__link">Inicio</a></th>
+                </div>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="imagenes\assets\diente.svg" class="list__img">
+                    <a href="#" class="nav__link">PARAMETRIZACION</a>
+                    <img src="imagenes\assets\arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\clinica.svg"> IPS</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\contrato.svg">
+                            Contratos</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\roles.svg"> Roles</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\usuario.svg">
+                            Usuarios</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\tipocontrato.svg">
+                            Tipos de
+                            Contrato</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\autoriza.svg">
+                            Autorizaciones</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\codigo.svg"> Códigos
+                            de
+                            devolución</a>
+                    </li>
+                </ul>
+            </li>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
