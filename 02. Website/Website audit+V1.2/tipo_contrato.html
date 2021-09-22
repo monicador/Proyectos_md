@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú despegable</title>
+    <link rel="stylesheet" href="styles\styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+
+   <!--Banner inicio-->
+<div id="covid-bar" class="covid-bar"><a href="tel:3176468544" target="#" rel="noreferrer">Llámanos 📞 al 317 646 8544 - Lunes a Viernes de 8 a 17:30 hrs y Sábados de 8 a 12 hrs</a><span id="buttonCovid">x</span></div>
+
+    <!--Encabezado-->
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="imagenes\logo.jpg">Audit+</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="#">Planes</a></li>
+            <li><a href="#">Contáctenos</a></li>
+          </ul>
+        </div>
+      </nav>
+    <!--Fin de Encabezado-->
+
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3" style="background-color:#f1f9fa;">
+        <nav class="nav">
+            <ul class="list">
+    
+                <li class="list__item">
+                    <div class="list__button">
+                        <img src="imagenes\assets\home.svg" class="list__img">
+                        <th><a href="index.html" class="nav__link">Inicio</a></th>
+                    </div>
+                </li>
+    
+                <li class="list__item list__item--click">
+                    <div class="list__button list__button--click">
+                        <img src="imagenes\assets\diente.svg" class="list__img">
+                        <a href="#" class="nav__link">PARAMETRIZACION</a>
+                        <img src="imagenes\assets\arrow.svg" class="list__arrow">
+                    </div>
+    
+                    <ul class="list__show">
+                        <li class="list__inside">
+                            <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\clinica.svg"> IPS</a>
+                        </li>
+    
+                        <li class="list__inside">
+                            <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\contrato.svg">
+                                Contratos</a>
+                        </li>
+    
+                        <li class="list__inside">
+                            <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\roles.svg"> Roles</a>
+                        </li>
+    
+                        <li class="list__inside">
+                            <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\usuario.svg">
+                                Usuarios</a>
+                        </li>
+    
+                        <li class="list__inside">
+                            <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\tipocontrato.svg">
+                                Tipos de
+                                Contrato</a>
+                        </li>
+    
+                        <li class="list__inside">
+                            <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\autoriza.svg">
+                                Autorizaciones</a>
+                        </li>
+    
+                        <li class="list__inside">
+                            <a href="#" class="nav__link nav__link--inside"><img src="imagenes\assets\codigo.svg"> Códigos
+                                de
+                                devolución</a>
+                        </li>
+                    </ul>
+                </li>
+                </li>
+            </ul>
+        </nav>
+    
+        <script src=".vscode\main.js"></script></div>
+
+    
+<!--/ Inicio de tipo de contrato */-->
+<div class="col-sm-9" style="background-color:#f1f9fa;">
+    <h1 class="titulos">Tipo de Contrato
+        <br>
+        <br>
+        
+    </h1>
+        <form>
+            Tipo de contrato:<input type="text"/>  <br/><br/>
+            Descripción:<input type="text"/>   <br/><br/>
+            Enviar: <input type="submit"> 
+            </form>
+</div>
+<!--/ Fin de tipo de contrato */-->
+
+
+</body>
+
+</html>
