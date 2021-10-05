@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extended: true }))
   //  res.send('Hello World!');
 //});
 app.use('/api', require('./routes/factura'));
-
+app.use('/api', require('./routes/usuario'));
 
 const history = require('connect-history-api-fallback');
 app.use(history());

@@ -1,16 +1,16 @@
 import express from 'express';
 const router = express.Router();
-// importar el modelo factura
-import factura from '../models/factura';
+// importar el modelo usuario
+import usuario from '../models/usuario';
 
-// Agregar una factura
+// Agregar una usuario
 
-router.post('/nueva-factura', async(req, res) => {
+router.post('/nuevousuario', async(req, res) => {
     const body = req.body; 
 
     try {
-        const facturaDB = await factura.create(body);
-        res.status(200).json(facturaDB);
+        const usuarioDB = await usuario.create(body);
+        res.status(200).json(usuarioDB);
     } catch (error) {
     return res.status(500).json({
     mensaje: 'Ocurrio un error',
@@ -18,14 +18,15 @@ router.post('/nueva-factura', async(req, res) => {
     })
     }
 });
+
 // Exportamos la configuración de express app
 
 // Get con parámetros
-router.get('/factura/:id', async(req, res) => {
+router.get('/usuario/:id', async(req, res) => {
     const _id = req.params.id;
     try {
-    const facturaDB = await factura.findOne({_id});
-    res.json(facturaDB);
+    const usuarioDB = await usuario.findOne({_id});
+    res.json(usuarioDB);
     } catch (error) {
     return res.status(400).json({
     mensaje: 'Ocurrio un error',
@@ -35,10 +36,10 @@ router.get('/factura/:id', async(req, res) => {
 });
 
 // Get con todos los documentos
-router.get('/factura', async(req, res) => {
+router.get('/usuario', async(req, res) => {
     try {
-    const facturaDb = await factura.find();
-    res.json(facturaDb);
+    const usuarioDb = await usuario.find();
+    res.json(usuarioDb);
     } catch (error) {
     return res.status(400).json({
     mensaje: 'Ocurrio un error',
@@ -47,18 +48,18 @@ router.get('/factura', async(req, res) => {
     }
 });
 
-// Delete eliminar una factura
-router.delete('/factura/:id', async(req, res) => {
+// Delete eliminar una usuario
+router.delete('/usuario/:id', async(req, res) => {
     const _id = req.params.id;
     try {
-    const facturaDb = await factura.findByIdAndDelete({_id});
-    if(!facturaDb){
+    const usuarioDb = await usuario.findByIdAndDelete({_id});
+    if(!usuarioDb){
     return res.status(400).json({
     mensaje: 'No se encontró el id indicado',
     error
     })
     }
-    res.json(facturaDb); 
+    res.json(usuarioDb); 
     } catch (error) {
     return res.status(400).json({
     mensaje: 'Ocurrio un error',
@@ -67,16 +68,16 @@ router.delete('/factura/:id', async(req, res) => {
     }
 });
 
-// Put actualizar una factura
-router.put('/factura/:id', async(req, res) => {
+// Put actualizar una usuario
+router.put('/usuario/:id', async(req, res) => {
     const _id = req.params.id;
     const body = req.body;
     try {
-    const facturaDb = await factura.findByIdAndUpdate(
+    const usuarioDb = await usuario.findByIdAndUpdate(
     _id,
     body,
     {new: true});
-    res.json(facturaDb); 
+    res.json(usuarioDb); 
     } catch (error) {
     return res.status(400).json({
     mensaje: 'Ocurrio un error',
