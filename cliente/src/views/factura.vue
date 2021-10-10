@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1>Facturas Radicadas</h1>
+        
 
         <b-alert
             :show="dismissCountDown"
@@ -12,8 +12,25 @@
 </b-alert>
 
 
+        <form @submit.prevent="editarfactura(facturaEditar)" v-if="editar">
+            <h3>Modificar Facturas</h3>
 
-        <form @submit.prevent="radicarfactura()">
+            <input type="text" class="form-control my-2" placeholder="No. Radicacion" v-model ="facturaEditar.noradicacion">
+            <input type="text" class="form-control my-2" placeholder="Nit" v-model ="facturaEditar.nit">
+            <input type="text" class="form-control my-2" placeholder="Prefijo" v-model ="facturaEditar.prefijo">
+            <input type="text" class="form-control my-2" placeholder="No. Factura" v-model ="facturaEditar.nofactura">
+            <input type="text" class="form-control my-2" placeholder="Nivel" v-model ="facturaEditar.nivel">
+            <input type="text" class="form-control my-2" placeholder="Tipo Id" v-model ="facturaEditar.tipoid">
+            <input type="text" class="form-control my-2" placeholder="Id Paciente" v-model ="facturaEditar.idpaciente">
+            <input type="text" class="form-control my-2" placeholder="Nombre Paciente" v-model ="facturaEditar.nombrepaciente">
+            <input type="text" class="form-control my-2" placeholder="Fecha Factura" v-model ="facturaEditar.fechafactura">
+            <input type="text" class="form-control my-2" placeholder="Valor Factura" v-model ="facturaEditar.valorfactura">
+            <input type="text" class="form-control my-2" placeholder="Estado" v-model ="facturaEditar.estado">
+            <b-button class="btn-success my-2 mx-2" type="submit">Editar Factura</b-button>
+            <b-button class=" my-2" type="submit"@click="editar=false">Cancelar</b-button>
+
+        </form>
+        <form @submit.prevent="radicarfactura()" vi-if="!editar">
             <h3>Radicar Nuevas Facturas</h3>
 
             <input type="text" class="form-control my-2" placeholder="No. Radicacion" v-model ="facturar.noradicacion">
@@ -30,9 +47,11 @@
             <b-button class="btn-success my-2" type="submit">Radicar Factura</b-button>
 
 
+            <h1>Facturas Radicadas</h1>
         </form>
 
         <table class="table">
+
 <thead>
     <tr>
         <th scope="col">#</th>
@@ -46,8 +65,9 @@
         <th scope="col">Nombre paciente</th>
         <th scope="col">Fecha Factura</th>
         <th scope="col">Valor Factura</th>
-        <th scope="col">Radicar</th>
-    </tr>
+        <th scope="col">Estado</th>
+        <th scope="col">Acciones</th>
+        </tr>
 </thead>
 <tbody>
     <tr v-for="(item, index) in factura" :key="index">
@@ -63,6 +83,11 @@
     <td>{{item.fechafactura}}</td>
     <td>{{item.valorfactura}}</td>
     <td>{{item.estado}}</td>
+    <td><b-button class="btn-danger my-2" @click="eliminar(item._id)">Eliminar</b-button>
+    </td>
+        <td><b-button class="btn-warning my-2" @click="actvaredicion(item._id)">Editar</b-button>
+       </td>
+    
     </tr>   
 </tbody>
 </table>
@@ -84,7 +109,9 @@ export default {
             dismissCountDown: 0,
 
 
-            facturar:{noradicacion:"",nit:"",prefijo:"",nofactura:"",nivel:"",tipoid:"",idpaciente:"",nombrepaciente:"",fechafactura:"",valorfactura:"",estado:""}
+            facturar:{noradicacion:"",nit:"",prefijo:"",nofactura:"",nivel:"",tipoid:"",idpaciente:"",nombrepaciente:"",fechafactura:"",valorfactura:"",estado:""},
+            editar:false,
+            facturaEditar:{}
 
         }
     },
@@ -137,8 +164,73 @@ export default {
             .catch(e=>{
                 console.log(e.response)
         })
+
+
         },
 
+
+        eliminar(id){
+
+            this.axios.delete(`/factura/${id}`)
+            .then(res=>{
+
+                const index =this.factura.findIndex(item=> item._id===res.data._id);
+                this.factura.splice(index, 1);
+                this.mensaje.color="success";
+                this.mensaje.texto="Factura eliminada";
+                this.showAlert();
+
+
+            })
+            .catch(e=>{
+                console.log(e.response);
+            })
+        },
+
+        actvaredicion(id){
+
+            this.editar=true
+            this.axios.get(`/factura/${id}`)
+            .then(res=>{
+                this.facturaEditar=res.data;
+            })
+
+            .catch(e=>{
+                console.log(e.response);
+            })
+
+        },
+
+        editarfactura(item){
+
+            this.axios.put(`/factura/${item._id}`, item)
+            .then(res=>{
+
+            const index=this.factura.findIndex(n=>n._id===res.data._id);
+            this.factura[index].noradicacion=res.data.noradicacion;
+            this.factura[index].nit=res.data.nit;
+            this.factura[index].prefijo=res.data.prefijo;
+            this.factura[index].nofactura=res.data.nofactura;
+            this.factura[index].nivel=res.data.nivel;
+            this.factura[index].tipoid=res.data.tipoid;
+            this.factura[index].idpaciente=res.data.idpaciente;
+            this.factura[index].nombrepaciente=res.data.nombrepaciente;
+            this.factura[index].fechafactura=res.data.fechafactura;
+            this.factura[index].valorfactura=res.data.valorfactura;
+            this.factura[index].estado=res.data.estado;
+            this.mensaje.color="success";
+            this.mensaje.texto="Factura Actualizada";
+            this.showAlert();
+            this.editar=false;
+        
+            })
+
+            .catch(e=>{
+                console.log(e.response);
+            })
+
+        },
+        
         countDownChanged(dismissCountDown) {
             this.dismissCountDown = dismissCountDown
         },
