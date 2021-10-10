@@ -13,7 +13,7 @@ router.post('/nuevousuario', async(req, res) => {
         res.status(200).json(usuarioDB);
     } catch (error) {
     return res.status(500).json({
-    mensaje: 'Ocurrio un error',
+    mensaje: 'Ocurrio un error al crear un usuario',
     error
     })
     }

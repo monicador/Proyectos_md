@@ -10,7 +10,8 @@ const app = express();
 
 // Conexión base de datos
 const mongoose = require('mongoose');
-const uri = 'mongodb://localhost:27017/auditplus';
+//const uri = 'mongodb://localhost:27017/auditplus';
+const uri = 'mongodb+srv://auditplus:auditplus123@auditplus.x2ndc.mongodb.net/auditplus?retryWrites=true&w=majority';
 const options = {useNewUrlParser: true, useUnifiedTopology: true};
 
 // promises
@@ -20,7 +21,7 @@ const options = {useNewUrlParser: true, useUnifiedTopology: true};
 );
 
 //MIDDLEWARE
-app.use(morgan('tiny'));
+app.use(morgan('combined'));
 app.use(cors());
 app.use(express.json());
 //application/x-www-form-urlencoded
