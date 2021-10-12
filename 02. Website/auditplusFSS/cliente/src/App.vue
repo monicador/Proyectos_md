@@ -1,36 +1,16 @@
 <template>
   <!-- Heading-->
 
-  <v-app>
-    <Header />
-    <div id="nav">
-      <router-link to="/">Inicio Sesión</router-link> |
-      <router-link to="/menu-parametrizacion">Parametrización</router-link> |
-      <router-link to="/factura">Radicar Factura</router-link> |
-      <router-link to="/modificar_factura">Modificar Factura</router-link> |
-      <router-link to="/about">Quienes somos</router-link>
-    </div>
-    <Barra />
-    <v-main>
+  <div class="min-vh-100 d-flex flex-column justify-content-between">
+    <div class="align-self-stretch flex-fill">
       <router-view />
-    </v-main>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
+    </div>
     <Footer />
-  </v-app>
+  </div>
 </template>
  
 <script>
-import Barra from "./components/Barra.vue";
 import Footer from "./components/Footer.vue";
-import Header from "./components/Header.vue";
 
 export default {
   name: "App",
@@ -39,7 +19,6 @@ export default {
     //
   }),
   components: {
-    Barra,
     Footer,
   },
 };
