@@ -1,56 +1,48 @@
 <template>
+  <!-- Heading-->
+
   <v-app>
-    
+    <Header />
     <div id="nav">
-      <router-link to="/">Inicio</router-link> |
-      <router-link to="/factura">Factura</router-link> |
-      <router-link to="/modificar_factura">Modificar Factura</router-link> |   
-      <router-link to="/about">Quienes somos</router-link>       
+      <router-link to="/">Inicio Sesión</router-link> |
+      <router-link to="/menu-parametrizacion">Parametrización</router-link> |
+      <router-link to="/factura">Radicar Factura</router-link> |
+      <router-link to="/modificar_factura">Modificar Factura</router-link> |
+      <router-link to="/about">Quienes somos</router-link>
     </div>
-    <Barra/>
+    <Barra />
     <v-main>
+      <router-view />
+    </v-main>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
-    <router-view/>
-  </v-main>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  
-
-<Footer/>
-</v-app>
-
-
-
+    <Footer />
+  </v-app>
 </template>
  
 <script>
+import Barra from "./components/Barra.vue";
+import Footer from "./components/Footer.vue";
+import Header from "./components/Header.vue";
 
-import Barra from './components/Barra.vue'
-import Footer from './components/Footer.vue'
+export default {
+  name: "App",
 
-export default { 
-  name: 'App',
-
-  data: () =>( { 
-
+  data: () => ({
     //
-
   }),
-  components:{ 
+  components: {
     Barra,
     Footer,
-  }
-
+  },
 };
-  
-
-
 </script>
 
 
@@ -73,6 +65,6 @@ export default {
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #424ab9;
 }
 </style>
