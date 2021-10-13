@@ -1,7 +1,9 @@
 
 <template>
   <div>
-    <Barra />
+    <BarraNav />
+    <br />
+    <br />
     <div class="container">
       <div class="row" align="center">
         <br />
@@ -73,7 +75,7 @@
               <div>
                 <path fill-rule="evenodd" />
                 <img
-                  src="../assets/edith.jpg"
+                  src="../assets/edith.png"
                   class="img-thumbnail"
                   alt="edith"
                 />
@@ -148,29 +150,23 @@
         <div class="col-sm-6 col-xs-12 col-lg-4 mt-5">
           <div class="card">
             <div class="d-flex justify-content-center p-2">
-              <svg
-                width="12em"
-                height="12em"
-                viewBox="0 0 16 16"
-                class="bi bi-alarm-fill"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527zM8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"
+              <div>
+                <img
+                  src="../assets/Marisol.jpg"
+                  class="img-thumbnail"
+                  alt="Marisol.."
                 />
-              </svg>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Marisol Ruíz</h5>
-              <p class="card-text justify=center">
-                <b>Integrante del equipo de desarrollo de Scrum</b>
-              </p>
-              <p>marisol1021@gmail.com</p>
-              <div class="card-footer">
-                <a href="#" class="btn btn-primary btn-center">Contactar</a>
-                <small class="text-muted"><p>Móvil +57 317333333</p></small>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Marisol Ruíz</h5>
+                <p class="card-text">
+                  <b>Integrante del equipo de desarrollo de Scrum</b>
+                </p>
+                <p>marisol1021@gmail.com</p>
+                <div class="card-footer">
+                  <a href="#" class="btn btn-primary btn-center">Contactar</a>
+                  <small class="text-muted"><p>Móvil +57 317333333</p></small>
+                </div>
               </div>
             </div>
           </div>
@@ -181,9 +177,9 @@
 </template>
 
   <script>
-import Barra from "../components/Barra.vue";
+import BarraNav from "../components/BarraNav.vue";
 export default {
-  components: { Barra },
+  components: { BarraNav },
 };
 </script>
 

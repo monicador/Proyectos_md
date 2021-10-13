@@ -9,7 +9,6 @@
         <b-navbar-nav>
           <b-nav-item href="/about">Quiénes somos</b-nav-item>
           <b-nav-item href="/contactenos" disabled>Contáctenos</b-nav-item>
-          <a v-on:click="logout" href="#">Logout</a>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->

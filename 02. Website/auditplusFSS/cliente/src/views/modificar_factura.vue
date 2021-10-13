@@ -1,104 +1,108 @@
 <template>
-  <div class="container">
-    <div class="row" align="center">
-      <img
-        alt="logo Audit+"
-        width="80"
-        height="80"
-        src="../assets/logoAudit.svg"
-      />
-    </div>
-    <HelloWorld msg="Software" administrativo de glosas />
+  <div>
+    <BarraNav />
     <br />
+    <br />
+    <div class="container">
+      <div class="row" align="center">
+        <img
+          alt="logo Audit+"
+          width="80"
+          height="80"
+          src="../assets/logoAudit.svg"
+        />
+      </div>
+      <HelloWorld msg="Software" administrativo de glosas />
+      <br />
 
-    <b-alert
-      :show="dismissCountDown"
-      dismissible
-      :variant="mensaje.color"
-      @dismissed="dismissCountDown = 0"
-      @dismiss-count-down="countDownChanged"
-    >
-      {{ mensaje.texto }}
-    </b-alert>
-
-    <form @submit.prevent="editarfactura(facturaEditar)" v-if="editar">
-      <h3>Modificar Facturas</h3>
-
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="No. Radicacion"
-        v-model="facturaEditar.noradicacion"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="Nit"
-        v-model="facturaEditar.nit"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="Prefijo"
-        v-model="facturaEditar.prefijo"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="No. Factura"
-        v-model="facturaEditar.nofactura"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="Nivel"
-        v-model="facturaEditar.nivel"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="Tipo Id"
-        v-model="facturaEditar.tipoid"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="Id Paciente"
-        v-model="facturaEditar.idpaciente"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="Nombre Paciente"
-        v-model="facturaEditar.nombrepaciente"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="Fecha Factura"
-        v-model="facturaEditar.fechafactura"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="Valor Factura"
-        v-model="facturaEditar.valorfactura"
-      />
-      <input
-        type="text"
-        class="form-control my-2"
-        placeholder="Estado"
-        v-model="facturaEditar.estado"
-      />
-
-      <b-button class="btn-success my-2 mx-2" type="submit"
-        >Editar Factura</b-button
+      <b-alert
+        :show="dismissCountDown"
+        dismissible
+        :variant="mensaje.color"
+        @dismissed="dismissCountDown = 0"
+        @dismiss-count-down="countDownChanged"
       >
-      <b-button class="my-2" type="submit" @click="editar = false"
-        >Cancelar</b-button
-      >
-    </form>
-    <!--       <form @submit.prevent="radicarfactura()" vi-if="!editar">
+        {{ mensaje.texto }}
+      </b-alert>
+
+      <form @submit.prevent="editarfactura(facturaEditar)" v-if="editar">
+        <h3>Modificar Facturas</h3>
+
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="No. Radicacion"
+          v-model="facturaEditar.noradicacion"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Nit"
+          v-model="facturaEditar.nit"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Prefijo"
+          v-model="facturaEditar.prefijo"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="No. Factura"
+          v-model="facturaEditar.nofactura"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Nivel"
+          v-model="facturaEditar.nivel"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Tipo Id"
+          v-model="facturaEditar.tipoid"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Id Paciente"
+          v-model="facturaEditar.idpaciente"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Nombre Paciente"
+          v-model="facturaEditar.nombrepaciente"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Fecha Factura"
+          v-model="facturaEditar.fechafactura"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Valor Factura"
+          v-model="facturaEditar.valorfactura"
+        />
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Estado"
+          v-model="facturaEditar.estado"
+        />
+
+        <b-button class="btn-success my-2 mx-2" type="submit"
+          >Editar Factura</b-button
+        >
+        <b-button class="my-2" type="submit" @click="editar = false"
+          >Cancelar</b-button
+        >
+      </form>
+      <!--       <form @submit.prevent="radicarfactura()" vi-if="!editar">
             <h3>Radicar Nuevas Facturas</h3>
 
             <input type="text" class="form-control my-2" placeholder="No. Radicacion" v-model ="facturar.noradicacion">
@@ -118,56 +122,61 @@
             <h1>Facturas Radicadas</h1>
         </form>-->
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">No. radicacion</th>
-          <th scope="col">Nit ips</th>
-          <th scope="col">Prefijo</th>
-          <th scope="col">No. factura</th>
-          <th scope="col">Nivel</th>
-          <th scope="col">Tipo id</th>
-          <th scope="col">Id paciente</th>
-          <th scope="col">Nombre paciente</th>
-          <th scope="col">Fecha Factura</th>
-          <th scope="col">Valor Factura</th>
-          <th scope="col">Estado</th>
-          <th scope="col">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(item, index) in factura" :key="index">
-          <th scope="row">{{ item._id }}</th>
-          <td>{{ item.noradicacion }}</td>
-          <td>{{ item.nit }}</td>
-          <td>{{ item.prefijo }}</td>
-          <td>{{ item.nofactura }}</td>
-          <td>{{ item.nivel }}</td>
-          <td>{{ item.tipoid }}</td>
-          <td>{{ item.idpaciente }}</td>
-          <td>{{ item.nombrepaciente }}</td>
-          <td>{{ item.fechafactura }}</td>
-          <td>{{ item.valorfactura }}</td>
-          <td>{{ item.estado }}</td>
-          <td>
-            <b-button class="btn-danger my-2" @click="eliminar(item._id)"
-              >Eliminar</b-button
-            >
-          </td>
-          <td>
-            <b-button class="btn-primary my-2" @click="actvaredicion(item._id)"
-              >Editar</b-button
-            >
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">No. radicacion</th>
+            <th scope="col">Nit ips</th>
+            <th scope="col">Prefijo</th>
+            <th scope="col">No. factura</th>
+            <th scope="col">Nivel</th>
+            <th scope="col">Tipo id</th>
+            <th scope="col">Id paciente</th>
+            <th scope="col">Nombre paciente</th>
+            <th scope="col">Fecha Factura</th>
+            <th scope="col">Valor Factura</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in factura" :key="index">
+            <th scope="row">{{ item._id }}</th>
+            <td>{{ item.noradicacion }}</td>
+            <td>{{ item.nit }}</td>
+            <td>{{ item.prefijo }}</td>
+            <td>{{ item.nofactura }}</td>
+            <td>{{ item.nivel }}</td>
+            <td>{{ item.tipoid }}</td>
+            <td>{{ item.idpaciente }}</td>
+            <td>{{ item.nombrepaciente }}</td>
+            <td>{{ item.fechafactura }}</td>
+            <td>{{ item.valorfactura }}</td>
+            <td>{{ item.estado }}</td>
+            <td>
+              <b-button class="btn-danger my-2" @click="eliminar(item._id)"
+                >Eliminar</b-button
+              >
+            </td>
+            <td>
+              <b-button
+                class="btn-primary my-2"
+                @click="actvaredicion(item._id)"
+                >Editar</b-button
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
+import BarraNav from "../components/BarraNav.vue";
 export default {
+  components: { BarraNav },
   data() {
     return {
       factura: [],

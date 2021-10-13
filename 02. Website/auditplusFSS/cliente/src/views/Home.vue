@@ -1,8 +1,10 @@
 <template>
   <div class="h-100">
-    <Barra />
-    <div class="container">
-      <div class="row" align="center">
+    <BarraNav />
+    <br />
+    <br />
+    <div class="container" align="center">
+      <div class="row" align="center" height="v100">
         <br />
         <img
           alt="logo Audit+"
@@ -15,23 +17,23 @@
       <br />
       <br />
       <br />
-      <h4 class="text-left">Ingresar</h4>
 
       <form>
-        <div class="row mb-3">
+        <h4 class="text">Ingresar</h4>
+        <div class="row mb-3" align="center">
           <label for="inputEmail3" class="col-sm-2 col-form-label"
             ><b>Nombre de usuario</b></label
           >
-          <div class="col-sm-4">
+          <div class="col-sm-3" align="center">
             <input type="email" class="form-control" id="inputEmail3" />
           </div>
         </div>
 
-        <div class="row mb-3">
+        <div class="row mb-3" align="center">
           <label for="inputPassword3" class="col-sm-2 col-form-label"
             ><b>Contraseña</b></label
           >
-          <div class="col-sm-4">
+          <div class="col-sm-3" align="center">
             <input type="password" class="form-control" id="inputPassword3" />
           </div>
         </div>
@@ -47,9 +49,9 @@
 </template>
 
   <script>
-import Barra from "../components/Barra.vue";
+import BarraNav from "../components/BarraNav.vue";
 export default {
-  components: { Barra },
+  components: { BarraNav },
 };
 </script>
 

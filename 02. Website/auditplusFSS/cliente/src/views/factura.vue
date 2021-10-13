@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Barra />
+    <BarraNav />
+    <br />
     <div class="container">
       <div class="row" align="center">
         <img
@@ -224,9 +225,9 @@
 </template>
 
 <script>
-import Barra from "../components/Barra.vue";
+import BarraNav from "../components/BarraNav.vue";
 export default {
-  components: { Barra },
+  components: { BarraNav },
 
   data() {
     return {
@@ -308,7 +309,7 @@ h2 {
   font-size: 2, 8em;
   margin: 0.67em 0;
   color: rgb(22, 6, 94);
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: Arial bold, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 </style>
     
