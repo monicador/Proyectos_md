@@ -14,7 +14,7 @@ import VueAxios from "vue-axios";
 
 Vue.use(VueAxios, axios);
 
-axios.defaults.baseURL = "http://localhost:3000/api";
+axios.defaults.baseURL = "https://auditplus-colombia.herokuapp.com/api";
 
 new Vue({
   router,
