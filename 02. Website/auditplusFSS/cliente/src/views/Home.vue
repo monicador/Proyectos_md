@@ -25,8 +25,12 @@
           class="form-control text-center"
           placeholder="Contraseña"
         />
-        <button type="submit" class="btn btn-primary w-100">
-          <b><a href="/parametrizacion" class="text-white">Enviar</a></b>
+        <button
+          type="button"
+          class="btn btn-primary w-100"
+          @click="$router.push('parametrizacion')"
+        >
+          <b>Enviar</b>
         </button>
       </form>
     </div>
