@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Imagenes/favicon.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="estilos/menu.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/lib/bootstrap.min.css">
+    <script src="/lib/jquery-1.12.2.min.js"></script>
+    <script src="/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles\styles.css">
+</head>
+
+<body>
+
+    <body>
+        <img src="imagenes\login.jpg" style="width: 100%; height: 100%; padding-top: 0px; padding-bottom: 30px;">
+
+        <h1 class="titulos">INICIO DE SESIÓN
+
+        </h1>
+        <h2>Software Administrativo de Gestión de Glosas</h2>
+
+        <body>
+            <h2>Ingresar</h2>
+
+
+            <form action="http://www.audit.com/procesarformulario" method="POST">
+                <p>
+                    <label for="Empresa">Empresa: </label>
+                    <select name="empresa" <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <!-- resto de empresas... -->
+                    </select>
+                </p>
+                <p>
+                    <label for="password">ID de Usuario: </label>
+                    <input name="password" type="password" maxlenght="16" />
+                </p>
+                <p>
+                    <label for="nombre">Clave Usuario: </label>
+                    <input name="nombre" type="text" maxlenght="64" />
+                </p>
+                <p>
+                    <label for="direccion">Olvidó su clave?: </label>
+                    <input name="direccion" type="text" maxlenght="128" />
+                </p>
+
+                <p>
+                    <input type="radio" name="tipo" value="particular" checked /> Ok<br />
+                    <input type="radio" name="tipo" value="Finalizar" /> Finalizar<br />
+                    <input type="radio" name="tipo" value="Modificar" /> Modificar<br />
+
+
+
+                </p>
+
+                <input type="checkbox" name="facturasRadicadas" value="radicadas" />
+                <label for="terminos">Conozca las facturas radicadas por IPS</label>
+                </p>
+                <p>
+
+                    <input type="checkbox" name="seguimiento" value="trazabilidad" />
+                    <label for="terminos">Realice un seguimiento de la trazabilidad de la factura</label>
+                </p>
+                <p>
+
+                    <input type="checkbox" name="cartera" value="control" />
+                    <label for="terminos">Controle la cartera</label>
+                </p>
+
+                <p>
+
+                    <input type="checkbox" name="informes" value="analisis" />
+                    <label for="terminos">Genere informes para análisis de la información</label>
+                </p>
+                <p>
+
+                    <input type="submit" value="Enviar" />
+                    <input type="reset" value="Borrar formulario" />
+                </p>
+            </form>
+        </body>
+
+</html>
