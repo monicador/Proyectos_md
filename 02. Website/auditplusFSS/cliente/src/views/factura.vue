@@ -1,6 +1,5 @@
 <template>
   <div>
-    <BarraNav />
     <br />
     <div class="container">
       <div class="row" align="center">
@@ -11,7 +10,6 @@
           src="../assets/logoAudit.svg"
         />
       </div>
-      <HelloWorld msg="Software" administrativo de glosas />
       <br />
 
       <b-alert
@@ -225,10 +223,7 @@
 </template>
 
 <script>
-import BarraNav from "../components/BarraNav.vue";
 export default {
-  components: { BarraNav },
-
   data() {
     return {
       factura: [],

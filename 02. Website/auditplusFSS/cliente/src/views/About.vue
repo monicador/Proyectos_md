@@ -1,7 +1,6 @@
 
 <template>
   <div>
-    <BarraNav />
     <br />
     <br />
     <div class="container">
@@ -14,7 +13,6 @@
           src="../assets/logoAudit.svg"
         />
       </div>
-      <HelloWorld msg="Software" administrativo de glosas />
     </div>
 
     <h3>Conozca nuestro Equipo Scrum</h3>
@@ -177,10 +175,7 @@
 </template>
 
   <script>
-import BarraNav from "../components/BarraNav.vue";
-export default {
-  components: { BarraNav },
-};
+export default {};
 </script>
 
 

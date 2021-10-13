@@ -2,7 +2,9 @@
   <!-- Heading-->
 
   <div class="min-vh-100 d-flex flex-column justify-content-between">
-    <div class="align-self-stretch flex-fill">
+    <BarraNav />
+
+    <div class="d-flex align-self-stretch flex-fill mx-auto">
       <router-view />
     </div>
     <Footer />
@@ -11,6 +13,7 @@
  
 <script>
 import Footer from "./components/Footer.vue";
+import BarraNav from "./components/BarraNav.vue";
 
 export default {
   name: "App",
@@ -20,6 +23,7 @@ export default {
   }),
   components: {
     Footer,
+    BarraNav,
   },
 };
 </script>

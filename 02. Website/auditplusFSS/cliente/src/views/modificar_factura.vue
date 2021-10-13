@@ -1,6 +1,5 @@
 <template>
   <div>
-    <BarraNav />
     <br />
     <br />
     <div class="container">
@@ -12,7 +11,6 @@
           src="../assets/logoAudit.svg"
         />
       </div>
-      <HelloWorld msg="Software" administrativo de glosas />
       <br />
 
       <b-alert
@@ -102,26 +100,6 @@
           >Cancelar</b-button
         >
       </form>
-      <!--       <form @submit.prevent="radicarfactura()" vi-if="!editar">
-            <h3>Radicar Nuevas Facturas</h3>
-
-            <input type="text" class="form-control my-2" placeholder="No. Radicacion" v-model ="facturar.noradicacion">
-            <input type="text" class="form-control my-2" placeholder="Nit" v-model ="facturar.nit">
-            <input type="text" class="form-control my-2" placeholder="Prefijo" v-model ="facturar.prefijo">
-            <input type="text" class="form-control my-2" placeholder="No. Factura" v-model ="facturar.nofactura">
-            <input type="text" class="form-control my-2" placeholder="Nivel" v-model ="facturar.nivel">
-            <input type="text" class="form-control my-2" placeholder="Tipo Id" v-model ="facturar.tipoid">
-            <input type="text" class="form-control my-2" placeholder="Id Paciente" v-model ="facturar.idpaciente">
-            <input type="text" class="form-control my-2" placeholder="Nombre Paciente" v-model ="facturar.nombrepaciente">
-            <input type="text" class="form-control my-2" placeholder="Fecha Factura" v-model ="facturar.fechafactura">
-            <input type="text" class="form-control my-2" placeholder="Valor Factura" v-model ="facturar.valorfactura">
-            <input type="text" class="form-control my-2" placeholder="Estado" v-model ="facturar.estado">
-            <b-button class="btn-primary my-2" type="submit">Radicar Factura</b-button>
-
-
-            <h1>Facturas Radicadas</h1>
-        </form>-->
-
       <table class="table">
         <thead>
           <tr>
@@ -174,9 +152,7 @@
 </template>
 
 <script>
-import BarraNav from "../components/BarraNav.vue";
 export default {
-  components: { BarraNav },
   data() {
     return {
       factura: [],
